@@ -1,0 +1,135 @@
+.title h2 {
+	font-family: "Roboto Slab",serif;
+	text-align: center;
+	color: white;
+	text-transform: uppercase;
+	padding: 6px 0;
+	width: 100%;
+	background-color: #d60606!important;
+	font-size: 20px;
+	border-radius: 50px 0;
+}
+.formulario_login{
+	background: rgba(64, 64, 64, 0.58);
+	/* text-align: center; */
+	padding: 1em;
+	width: 500px;
+	height: 300px;
+	margin: 0 auto;
+	margin-top: 113px;
+	border-radius: 12px;
+}
+
+.lista_dropdown{
+	position:absolute;
+	width: 200px;
+	background: #fff;
+	padding: 0;
+	margin: 0;
+	top: 42px;
+	z-index: 9999;
+	left: 67px;
+	display: none;
+}
+.lista_dropdown li{
+    width: 100%;
+    padding: 0!important;
+}
+.lista_dropdown li a{
+    display: block;
+    width: 100%;
+    /* padding: 0!important; */
+    border-radius: 0!important;
+}
+.menu_dropdown:hover .lista_dropdown{
+	display:block;
+}
+.formulario_login form input[type="text"],.formulario_login form input[type="password"]{
+	border: 1px solid #afafaf!important;
+}
+.formulario_login form input[type="submit"]{
+	background:#f00!importan;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #d60606;
+    border: none;
+    float:left;
+    font-size: 1.2em;
+}
+.img_fundo{background-image: url(../img/fundo.jpg);
+    background-size: cover;}
+.page-header {
+    padding-bottom: 9px;
+    margin: 40px 0 20px;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+}
+.esquerda{float:left;}
+.direita{float:right;}
+.btn_esqueceu button{
+	width:100%;
+	background: #111;
+	color: #fff;
+	/* border: 1px solid #d60606; */
+	margin-top: 4%;
+	font-size: 1.2em;
+	padding: 0.5em;
+}
+.btn_esqueceu button:hover{
+	width:100%;
+	background: #d60606!important;
+	color: #fff;
+	/* border: 1px solid #d60606; */
+	margin-top: 4%;
+	font-size: 1.2em;
+	padding: 0.5em;
+}
+.btn-primary:hover {
+	transition:0.7s all linear;
+	color: #fff;
+	background-color: #111;
+	border: none;
+}
+.input-group-addon:first-child {
+    border-right: 0;
+    border: 1px solid #afafaf!important;
+}
+.navbar-brand:hover {
+	text-decoration: underline;
+}
+
+.title .fa { letter-spacing: 5px; }
+
+.input_project {
+	border: 1px solid #286090;
+	color: #286090;	
+}
+.menu_projeto{padding: 0;/* margin-bottom: 11px; */}
+.menu_projeto li{
+	float:left;
+	list-style:none;
+	margin-right: 2%;
+	/* position: relative; */
+	padding: 0.5em 0;
+	/* display: inline-block; */
+}
+.menu_projeto li a{
+	color:#fff;
+	background:#d60606;
+	border-radius: 3px;
+	padding:0.5em;
+	font-size: 1.1em;
+	height:auto;
+}
+.menu_projeto li a:hover{
+	transition:0.5s all linear;
+	color:#fff;
+	background:#111;
+	text-decoration:none;
+}
+
+body {
+	background-image: url(../img/fundo.jpg);
+	background-size: cover;
+} 
