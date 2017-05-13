@@ -63,7 +63,7 @@
 						<div class="col-md-9" style="padding: 0;">
 							<input name="chave" class="form-control input_project"
 								id="search" type="text"
-								placeholder="Pesquisar Reclamações (deixe vazio para trazer todos)"
+								placeholder="Pesquisar Chamados (deixe vazio para trazer todos)"
 								style="border-radius: 7px 0 0 7px;">
 						</div>
 						<div class="col-md-3" style="padding: 0;">
