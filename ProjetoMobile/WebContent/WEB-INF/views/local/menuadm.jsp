@@ -16,7 +16,7 @@
                 		<a class="navbar-brand" href="#">Home</a>
                 	</li>
                 	<li class="menu_dropdown">
-                		<a class="navbar-brand" href="listar_#">Chamados em Aberto</a>
+                		<a class="navbar-brand" href="listar_">Chamados em Aberto</a>
                 	</li>
                 	<li>
                 		<a class="navbar-brand" href="#">SLAs</a>

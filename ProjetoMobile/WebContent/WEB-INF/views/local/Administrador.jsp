@@ -23,7 +23,8 @@
 
 <body style="background: #f7f7f7;">
 	<!-- Barra superior com os menus de navegação -->
-	<c:import url="../menuadm.jsp" />
+	<jsp:include page="menuadm.jsp"/>
+	
 
 	<!-- Modal -->
 	<div class="modal fade" id="delete-modal" tabindex="-1" role="dialog"
@@ -52,7 +53,7 @@
 	<!-- /.modal -->
 	<!-- Container Principal -->
 	<div id="main" class="container-fluid">
-		<form action="administrador" method="post">
+		<form action="listar_adm" method="post">
 			<div id="top" class="row">
 				<!--  <div class="col-md-3 title">
 					<h2><i class="fa fa-home" aria-hidden="true"></i>Home</h2>
@@ -114,9 +115,9 @@
 									<td>${reclamacao.resposta}</td>
 									<td>${reclamacao.titulo}</td>
 									<td class="actions"><a class="btn btn-success btn-xs"
-										href="mostrar_reclamacao?id=${reclamacao.id}">Exibir</a> <a
+										href="#?id=${reclamacao.id}">Solucionar</a> <a
 										class="btn btn-warning btn-xs"
-										href="alterar_reclamacao?id=${reclamacao.id}">Alterar</a>
+										href="#?id=${reclamacao.id}">Responder</a>
 									<a class="btn btn-danger btn-xs" href="remover_reclamacao?id=${reclamacao.id}">Excluir</a>
 									</td>
 								</tr>

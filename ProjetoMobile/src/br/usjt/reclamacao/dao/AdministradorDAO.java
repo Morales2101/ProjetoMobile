@@ -21,11 +21,11 @@ public class AdministradorDAO {
 	}
 	
 	public void atualizar(Administrador administrador){
-		managerAdm.merge(managerAdm.find(Administrador.class, administrador.getAdm()));
+		managerAdm.merge(managerAdm.find(Administrador.class, administrador.getEmail()));
 	}
 	
 	public void excluir(Administrador administrador){
-		managerAdm.remove(managerAdm.find(Administrador.class, administrador.getAdm()));
+		managerAdm.remove(managerAdm.find(Administrador.class, administrador.getEmail()));
 	}
 
 	public Administrador selecionar(String i){
@@ -39,15 +39,16 @@ public class AdministradorDAO {
 	
 	
 	public boolean validar(Administrador administrador){
-		String jpql = "SELECT a FROM Administrador a WHERE a.adm = :adm AND a.senha = :senha";
+		String jpql = "SELECT a FROM Administrador a WHERE a.email = :email AND a.senha = :senha";
 		TypedQuery<Administrador> query = managerAdm.createQuery(jpql,Administrador.class);
-		query.setParameter("adm", administrador.getAdm());
+		System.out.println(administrador.getEmail());
+		query.setParameter("email", administrador.getEmail());
 		query.setParameter("senha", administrador.getSenha());
 		List<Administrador> lista = query.getResultList();
 		boolean flag = (lista != null && lista.size() == 1);
 		
 		if(flag){
-			administrador.setAdm(lista.get(0).getAdm());
+			administrador.setEmail(lista.get(0).getEmail());
 			
 		}
 		return flag;

@@ -23,6 +23,6 @@ public class AdministradorService {
 	}
 	
 	public Administrador mostrar(Administrador administrador) throws IOException{
-		return dao.selecionar(administrador.getAdm());
+		return dao.selecionar(administrador.getEmail());
 	}
 }

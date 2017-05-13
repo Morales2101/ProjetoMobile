@@ -18,9 +18,9 @@ import br.usjt.reclamacao.service.UsuarioService;
 public class LoginController {
 	private final UsuarioService us;
 	private final AdministradorService as;
-	
+
 	public static final String att = "usuarioLogado";
-	
+
 	@Autowired
 	public LoginController(UsuarioService us, AdministradorService as) {
 		this.us = us;
@@ -33,19 +33,29 @@ public class LoginController {
 	}
 
 	@RequestMapping("fazer_login")
-	public String efetuaLogin(Usuario usuario, HttpSession session, Model model) {
+	public String efetuaLogin(Usuario usuario, Administrador Adm, HttpSession session, Model model) {
+		Administrador adm = new Administrador();
 
 		try {
 			if (us.validar(usuario)) {
 				session.setAttribute(att, usuario);
 				System.out.println(usuario);
 				return "redirect:listar_reclamacao";
+			} else if (as.validar(Adm)) {
+				session.setAttribute(att, Adm);
+				System.out.println(Adm);
+				return "redirect:listar_adm";
+			}else{
+				System.out.println(Adm);
+				
+
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
 			model.addAttribute("erro", e);
 			return "erro";
 		}
+
 		return "redirect:loginForm";
 	}
 
@@ -63,13 +73,10 @@ public class LoginController {
 			model.addAttribute("erro", e);
 			return "erro";
 		}
-		
-		
-		
+
 		return "redirect:loginForm";
 	}
 
-	
 	@RequestMapping("logout")
 	public String logout(HttpSession session) {
 		session.invalidate();

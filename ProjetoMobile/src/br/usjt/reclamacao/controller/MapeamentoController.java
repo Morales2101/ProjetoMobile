@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import br.usjt.reclamacao.model.Administrador;
 import br.usjt.reclamacao.model.Reclamacao;
 import br.usjt.reclamacao.model.Usuario;
 import br.usjt.reclamacao.service.ReclamacaoService;
@@ -121,10 +122,36 @@ public class MapeamentoController {
 		}
 		return "erro";
 	}
+	
+	@RequestMapping("listar_adm")
+	public String listagemadm(Model model , String chave) {
+		try {
+			if (chave == null || chave.equals("id")) {
+				model.addAttribute("reclamacao", rs.listarReclamacoes());
+			} else {
+				model.addAttribute("reclamacao", rs.listarReclamacoes());
+			}
+			return "local/Administrador";
+		
+		
+/*		try {
+			
+			Administrador admin = (Administrador) session.getAttribute(LoginController.att);
+			System.out.println(admin);
+			
+			return "local/Administrador";*/
+		} catch (Exception e) {
+			e.printStackTrace();
+			model.addAttribute("erro", e);
+		}
+		return "erro";
+	}	
+	
 
 	@RequestMapping("listar_reclamacao")
 	public String listagem(Model model , HttpSession session) {
 		try {
+			
 			Usuario user = (Usuario) session.getAttribute(LoginController.att);
 			System.out.println(user);
 			model.addAttribute("reclamacao", rs.listarReclamacoesPorUsuario(user));
