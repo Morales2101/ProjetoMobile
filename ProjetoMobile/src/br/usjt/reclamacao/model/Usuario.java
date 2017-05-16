@@ -20,6 +20,8 @@ public class Usuario implements Serializable{
 	
 	public static final String CIDADAO = "cidadao";
 	
+	public static final String SOLUCIONADOR = "solucionador";
+	
 	public static final String ADMINISTRADOR = "adm";
 	
 	private String tipo;

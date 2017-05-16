@@ -15,7 +15,6 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 		
 		if (uri.endsWith("loginForm")
 				|| uri.endsWith("fazer_login")
-				|| uri.endsWith("login_adm")
 				|| uri.contains("css")
 				|| uri.contains("js")
 				|| uri.contains("img")
