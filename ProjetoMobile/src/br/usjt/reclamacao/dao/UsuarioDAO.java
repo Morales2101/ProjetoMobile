@@ -49,7 +49,9 @@ public class UsuarioDAO {
 		
 		if(flag){
 			usuario.setId(lista.get(0).getId());
-			
+			usuario.setTipo(lista.get(0).getTipo());
+			usuario.setNome( lista.get(0).getTipo() );
+			usuario.setSecretaria(lista.get(0).getSecretaria());
 		}
 		
 		return flag;

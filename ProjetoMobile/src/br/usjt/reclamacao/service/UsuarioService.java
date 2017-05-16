@@ -25,6 +25,7 @@ public class UsuarioService {
 	}
 	
 	public void criar(Usuario usuario) throws IOException{
+		usuario.setTipo(Usuario.CIDADAO);
 		dao.criar(usuario);
 	}
 	
