@@ -40,8 +40,9 @@ public class ReclamacaoService{
 		reclamacaoDAO.excluir(reclamacao);
 	}
 	
-	public List<Reclamacao> listarReclamacoesPorUsuario(Usuario user) throws IOException {
-		return this.reclamacaoDAO.listarReclamacoesPorUsuario(user);
+	public List<Reclamacao> listarReclamacoesPorUsuario(int id) throws IOException {
+		System.out.println(id);
+		return this.reclamacaoDAO.listarReclamacoesPorUsuario(id);
 	}
 	
 	public void atualizar(Reclamacao reclamacao) throws IOException{

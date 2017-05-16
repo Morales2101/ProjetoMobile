@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import br.usjt.reclamacao.dao.AdministradorDAO;
 import br.usjt.reclamacao.model.Administrador;
+import br.usjt.reclamacao.model.Reclamacao;
 
 @Service
 public class AdministradorService {
@@ -25,4 +26,9 @@ public class AdministradorService {
 	public Administrador mostrar(Administrador administrador) throws IOException{
 		return dao.selecionar(administrador.getEmail());
 	}
-}
+
+	public void remover(Reclamacao reclamacao) throws IOException {
+			dao.excluir(reclamacao);
+		}
+	}
+

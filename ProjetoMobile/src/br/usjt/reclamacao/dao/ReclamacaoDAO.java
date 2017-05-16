@@ -57,10 +57,10 @@ public class ReclamacaoDAO {
 		return resultado;
 	}
 	
-	public List<Reclamacao> listarReclamacoesPorUsuario(Usuario user){
+	public List<Reclamacao> listarReclamacoesPorUsuario(int id){
 		String textoQuery = "SELECT r FROM Reclamacao r WHERE r.cidadao.id = :cidadao";
 		TypedQuery<Reclamacao> query = manager.createQuery(textoQuery,Reclamacao.class);
-		query.setParameter("cidadao", user.getId());
+		query.setParameter("cidadao", id );
 		List<Reclamacao> resultado = query.getResultList();
 		return resultado;
 	}

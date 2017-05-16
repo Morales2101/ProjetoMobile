@@ -94,12 +94,12 @@
 						<thead>
 							<tr>
 								<th>ID</th>
-								<th>Aprovado</th>
-								<th>Avaliador</th>
+								<th>Titulo</th>
 								<th>Data / Hora</th>
 								<th>Descrição</th>
 								<th>Resposta</th>
-								<th>Titulo</th>
+								<th>Avaliador</th>
+								<th>Aprovado</th>
 								<th class="actions">A&ccedil;&otilde;es</th>
 							</tr>
 						</thead>
@@ -107,13 +107,12 @@
 							<c:forEach var="reclamacao" items="${reclamacao}">
 								<tr>
 									<td>${reclamacao.id}</td>
-									<td>${reclamacao.aprovado}</td>
-									<td>${reclamacao.avaliador}</td>
+									<td>${reclamacao.titulo}</td>
 									<td>${reclamacao.dataHora}</td>
 									<td>${reclamacao.descricao}</td>
 									<td>${reclamacao.resposta}</td>
-									<td>${reclamacao.titulo}</td>
-									<td class="actions"><a class="btn btn-success btn-xs"
+									<td>${reclamacao.avaliador}</td>
+									<td>${reclamacao.aprovado}</td>						<td class="actions"><a class="btn btn-success btn-xs"
 										href="mostrar_reclamacao?id=${reclamacao.id}">Exibir</a> <a
 										class="btn btn-warning btn-xs"
 										href="alterar_reclamacao?id=${reclamacao.id}">Alterar</a>

@@ -37,7 +37,7 @@
 				</div>
 				<div class="form-group col-md-4">
 					<label for="Secretaria">Secretaria</label> 
-					<select name="secretaria.id" class="form-control" value="${reclamacao.secretaria }">
+					<select name="secretaria.id" class="form-control">
 						<c:choose>
 							<c:when test="${not empty secretarias}">
 							 <c:forEach var="secretaria" items="${secretarias}">
@@ -72,7 +72,7 @@
 			<div class="row">
 				<div class="form-group col-md-4">
 					<label for="cidadao">Login do reclamante</label> 
-					<input type="text" class="form-control" name="cidadao.id" value="${reclamacao.cidadao}">
+					<input type="text" class="form-control" name="cidadao.id" value="${reclamacao.cidadao.id}">
 					<form:errors path="Reclamacao.cidadao" cssStyle="color:red" placeholder="endereço referente à solicitação"/>
 				</div>
 			</div>

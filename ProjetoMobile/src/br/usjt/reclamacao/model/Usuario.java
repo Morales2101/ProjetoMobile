@@ -94,13 +94,19 @@ public class Usuario implements Serializable{
 		this.secretaria = secretaria;
 	}
 
+//	@Override
+//	public String toString() {
+//		return "Usuario [id=" + id + ", nome=" + nome + ", cpf="
+//				+ cpf + ", email=" + email + ", senha=" + senha + ", cargo=" + cargo + ", secretaria=" + secretaria
+//				+ "]";
+//	}
+
 	@Override
 	public String toString() {
-		return "Usuario [id=" + id + ", nome=" + nome + ", cpf="
-				+ cpf + ", email=" + email + ", senha=" + senha + ", cargo=" + cargo + ", secretaria=" + secretaria
-				+ "]";
+		return nome;
 	}
 
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;

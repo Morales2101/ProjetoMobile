@@ -53,7 +53,7 @@ public class Administrador implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Administrador [adm=" + getEmail() + ", senha=" + getSenha() + "]";
+		return "Administrador [id=" + id + ", email=" + email + ", senha=" + senha + "]";
 	}
 
 	@Override
@@ -61,6 +61,7 @@ public class Administrador implements Serializable {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
+		result = prime * result + id;
 		result = prime * result + ((senha == null) ? 0 : senha.hashCode());
 		return result;
 	}
@@ -79,6 +80,8 @@ public class Administrador implements Serializable {
 				return false;
 		} else if (!email.equals(other.email))
 			return false;
+		if (id != other.id)
+			return false;
 		if (senha == null) {
 			if (other.senha != null)
 				return false;
@@ -86,4 +89,5 @@ public class Administrador implements Serializable {
 			return false;
 		return true;
 	}
+
 }

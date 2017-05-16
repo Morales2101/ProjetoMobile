@@ -10,6 +10,7 @@ import javax.persistence.TypedQuery;
 import org.springframework.stereotype.Repository;
 
 import br.usjt.reclamacao.model.Administrador;
+import br.usjt.reclamacao.model.Reclamacao;
 
 @Repository
 public class AdministradorDAO {
@@ -24,8 +25,8 @@ public class AdministradorDAO {
 		managerAdm.merge(managerAdm.find(Administrador.class, administrador.getEmail()));
 	}
 	
-	public void excluir(Administrador administrador){
-		managerAdm.remove(managerAdm.find(Administrador.class, administrador.getEmail()));
+	public void excluir(Reclamacao reclamacao){
+		managerAdm.remove(managerAdm.find(Reclamacao.class, reclamacao.getId()));
 	}
 
 	public Administrador selecionar(String i){

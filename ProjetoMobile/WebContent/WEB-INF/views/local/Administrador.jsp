@@ -94,31 +94,31 @@
 					<table class="table table-striped">
 						<thead>
 							<tr>
-								<th>ID</th>
-								<th>Aprovado</th>
-								<th>Avaliador</th>
+								<th>Solicitante</th>
+								<th>Titulo</th>
 								<th>Data / Hora</th>
 								<th>Descrição</th>
 								<th>Resposta</th>
-								<th>Titulo</th>
+								<th>Avaliador</th>
+								<th>Aprovado</th>
 								<th class="actions">A&ccedil;&otilde;es</th>
 							</tr>
 						</thead>
 						<tbody>
 							<c:forEach var="reclamacao" items="${reclamacao}">
 								<tr>
-									<td>${reclamacao.id}</td>
-									<td>${reclamacao.aprovado}</td>
-									<td>${reclamacao.avaliador}</td>
+									<td>${reclamacao.cidadao}</td>
+									<td>${reclamacao.titulo}</td>
 									<td>${reclamacao.dataHora}</td>
 									<td>${reclamacao.descricao}</td>
 									<td>${reclamacao.resposta}</td>
-									<td>${reclamacao.titulo}</td>
+									<td>${reclamacao.avaliador}</td>
+									<td>${reclamacao.aprovado}</td>									
 									<td class="actions"><a class="btn btn-success btn-xs"
 										href="#?id=${reclamacao.id}">Solucionar</a> <a
 										class="btn btn-warning btn-xs"
 										href="#?id=${reclamacao.id}">Responder</a>
-									<a class="btn btn-danger btn-xs" href="remover_reclamacao?id=${reclamacao.id}">Excluir</a>
+									<a class="btn btn-danger btn-xs" href="remover_adm?id=${reclamacao.id}">Excluir</a>
 									</td>
 								</tr>
 							</c:forEach>
