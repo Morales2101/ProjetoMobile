@@ -17,7 +17,7 @@
 					<li class="menu_dropdown"><a class="navbar-brand"
 						href="listar_">Chamados em Aberto</a></li>
 					<li><a class="navbar-brand" href="#">SLAs</a></li>
-					<li><a class="navbar-brand" href="cadastrarsolucionador.jsp">Cadastro de Solucionador</a></li>
+					<li><a class="navbar-brand" href="cadastroSolucionador">Cadastro de Solucionador</a></li>
 					<li style="float: right;"><a class="navbar-brand"
 						href="logout">Logout</a></li>
 				</ul>

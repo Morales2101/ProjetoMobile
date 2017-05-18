@@ -41,7 +41,7 @@
 				<div class="form-group">
 					<div class="input-group ">
 					   <div class="input-group-addon"><span class="glyphicon glyphicon-option-horizontal" aria-hidden="true"></span></div> 
-					   <input type="text" name="cargo" id="cargo" class="form-control" placeholder="Cargo" required/>
+					   <input type="text" name="cargo" id="cargo" class="form-control" placeholder="Setor" required/>
 					</div>
 				</div>
 				<div class="form-group">

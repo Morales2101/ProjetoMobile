@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-
 import br.usjt.reclamacao.model.Reclamacao;
 import br.usjt.reclamacao.model.Usuario;
 import br.usjt.reclamacao.model.Administrador;
@@ -53,6 +52,11 @@ public class MapeamentoController {
 	public String cadastro() {
 		return "local/cadastro";
 	}
+	
+	@RequestMapping("cadastroSolucionador")
+	public String cadastroSolucionador() {
+		return "local/cadastroSolucionador";
+	}
 
 	@RequestMapping("cadastrar")
 	public String cadastrar(Model model, Usuario usuario, HttpSession criar) {
@@ -67,13 +71,30 @@ public class MapeamentoController {
 		}
 		return "erro";
 	}
+	
+	@RequestMapping("cadastrarSolucionador")
+	public String cadastrarSolucionador(Model model, Usuario usuario, HttpSession criar) {
+
+		try {
+			us.criar(usuario);
+			criar.setAttribute(LoginController.att, usuario);
+			return "redirect:listar_solucionador";
+		} catch (IOException e) {
+			e.printStackTrace();
+			model.addAttribute("erro", e);
+		}
+		return "erro";
+	}
+
 
 	@RequestMapping("nova_reclamacao")
 	public String form(Model model) {
 
 		try {
 			List<Reclamacao> reclamacao = rs.listarReclamacoes();
+			List<Usuario> usuario = us.listarCadastro();
 			model.addAttribute("reclamacao", reclamacao);
+			model.addAttribute("usuario", usuario);
 			return "local/reclamacaocriar";
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -103,7 +124,7 @@ public class MapeamentoController {
 				rs.atualizar(reclamacao);
 				// rs.gravarImagem(servletContext, reclamacao, file);
 				return "redirect:listar_reclamacao";
-			}else{
+			} else {
 				model.addAttribute("secretarias", ss.listarSecretarias());
 				model.addAttribute("reclamacao", rs.mostrar(reclamacao));
 				return "local/reclamacaoalterar";
@@ -143,15 +164,22 @@ public class MapeamentoController {
 				model.addAttribute("reclamacao", rs.listarReclamacoes());
 			}
 			return "local/Administrador";
-			/*
-			 * try {
-			 * 
-			 * Administrador admin = (Administrador)
-			 * session.getAttribute(LoginController.att);
-			 * System.out.println(admin);
-			 * 
-			 * return "local/Administrador";
-			 */
+		} catch (Exception e) {
+			e.printStackTrace();
+			model.addAttribute("erro", e);
+		}
+		return "erro";
+	}
+	
+	@RequestMapping("listar_solucionador")
+	public String listagemsolucionador(Model model, String chave) {
+		try {
+			if (chave == null || chave.equals("id")) {
+				model.addAttribute("reclamacao", rs.listarReclamacoes());
+			} else {
+				model.addAttribute("reclamacao", rs.listarReclamacoes());
+			}
+			return "local/solucionador";
 		} catch (Exception e) {
 			e.printStackTrace();
 			model.addAttribute("erro", e);
@@ -165,7 +193,7 @@ public class MapeamentoController {
 
 			Usuario user = (Usuario) session.getAttribute(LoginController.att);
 			System.out.println(user);
-			model.addAttribute("reclamacao", rs.listarReclamacoesPorUsuario( user.getId() ) );
+			model.addAttribute("reclamacao", rs.listarReclamacoesPorUsuario(user.getId()));
 
 			return "local/reclamacaolistar";
 		} catch (IOException e) {
