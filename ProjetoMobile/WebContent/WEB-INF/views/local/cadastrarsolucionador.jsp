@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Cadastros</title>
+    <title>Cadastrar Solucionador</title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -17,6 +17,7 @@
     <div id="main" class="container" >
     <div class="formulario_login" style="height:380px;">
        <h3 class="page-header" style="    margin: 5% 0;">Novo Cadastro</h3>
+       
        <!-- Formulario de Login -->
         <form action="cadastrar" method="post">
 				<div class="row col-md-12">
@@ -36,12 +37,6 @@
 					<div class="input-group ">
 					   <div class="input-group-addon"><span class="glyphicon glyphicon-option-horizontal" aria-hidden="true"></span></div> 
 					   <input type="cpf" name="cpf" id="cpf" class="form-control" placeholder="CPF" required/>
-					</div>
-				</div>
-				<div class="form-group">
-					<div class="input-group ">
-					   <div class="input-group-addon"><span class="glyphicon glyphicon-option-horizontal" aria-hidden="true"></span></div> 
-					   <input type="text" name="cargo" id="cargo" class="form-control" placeholder="Cargo" required/>
 					</div>
 				</div>
 				<div class="form-group">

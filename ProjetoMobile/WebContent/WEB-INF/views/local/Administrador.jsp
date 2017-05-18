@@ -23,8 +23,8 @@
 
 <body style="background: #f7f7f7;">
 	<!-- Barra superior com os menus de navegação -->
-	<jsp:include page="menuadm.jsp"/>
-	
+	<jsp:include page="menuadm.jsp" />
+
 
 	<!-- Modal -->
 	<div class="modal fade" id="delete-modal" tabindex="-1" role="dialog"
@@ -101,7 +101,7 @@
 								<th>Resposta</th>
 								<th>Avaliador</th>
 								<th>Aprovado</th>
-								<th class="actions">A&ccedil;&otilde;es</th>
+								<!-- 								<th class="actions">A&ccedil;&otilde;es</th> -->
 							</tr>
 						</thead>
 						<tbody>
@@ -113,13 +113,10 @@
 									<td>${reclamacao.descricao}</td>
 									<td>${reclamacao.resposta}</td>
 									<td>${reclamacao.avaliador}</td>
-									<td>${reclamacao.aprovado}</td>									
-									<td class="actions"><a class="btn btn-success btn-xs"
-										href="#?id=${reclamacao.id}">Solucionar</a> <a
-										class="btn btn-warning btn-xs"
-										href="#?id=${reclamacao.id}">Responder</a>
-									<a class="btn btn-danger btn-xs" href="remover_adm?id=${reclamacao.id}">Excluir</a>
-									</td>
+									<td>${reclamacao.aprovado}</td>
+									<td class="actions"><%-- <a class="btn btn-success btn-xs"  href="#?id=${reclamacao.id}">Solucionar</a>  --%>
+<%-- 										<a class="btn btn-warning btn-xs" href="#?id=${reclamacao.id}">Responder</a> --%>
+										<a class="btn btn-danger btn-xs"  href="remover_adm?id=${reclamacao.id}">Excluir</a></td>
 								</tr>
 							</c:forEach>
 

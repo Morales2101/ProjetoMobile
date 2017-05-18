@@ -1,6 +1,9 @@
 package br.usjt.reclamacao.model;
 
 import java.io.Serializable;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -72,6 +75,8 @@ public class Reclamacao  implements Serializable {
 	private Usuario		avaliador;
 	private String		resposta;
 	private String		fotoAnexa;
+	
+	
 	
 	public int getId() {
 		return id;

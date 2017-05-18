@@ -4,6 +4,10 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import javax.imageio.ImageIO;
@@ -64,7 +68,7 @@ public class ReclamacaoService{
 	public List<Reclamacao> listarReclamacoesFilhas(String reclamaPai) throws IOException{
 		return reclamacaoDAO.listarReclamacoesFilhas(reclamaPai);
 	}
-
+	
 	public void gravarImagem(ServletContext servletContext, Reclamacao reclamacao, MultipartFile file)
 			throws IOException {
 		if (!file.isEmpty()) {
@@ -85,6 +89,12 @@ public class ReclamacaoService{
 
 	public Reclamacao mostrar(Reclamacao reclamacao) throws IOException {
 		return reclamacaoDAO.selecionar(reclamacao.getId());
+	}
+	
+	public static String getDataHora(){
+		DateFormat df = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		Date dataHora = Calendar.getInstance().getTime();
+		return df.format(dataHora);
 	}
 	
 }

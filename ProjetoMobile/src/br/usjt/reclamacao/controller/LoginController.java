@@ -37,10 +37,10 @@ public class LoginController {
 				
 				if( usuario.getTipo().equals(Usuario.CIDADAO) ){
 					return "redirect:listar_reclamacao";
-				}else if( usuario.getTipo().equals(Usuario.SOLUCIONADOR)){
-					return "teste";
-				}else{
+				}else if( usuario.getTipo().equals(Usuario.ADMINISTRADOR)){
 					return "redirect:listar_adm";
+				}else{
+					return "redirect:listar_solucionador";
 				}
 			}
 			

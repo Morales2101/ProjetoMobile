@@ -125,6 +125,7 @@ public class MapeamentoController {
 			}
 			rs.criar(reclamacao);
 			rs.gravarImagem(servletContext, reclamacao, file);
+			rs.getDataHora();
 			return "redirect:listar_reclamacao";
 		} catch (IOException e) {
 			e.printStackTrace();
