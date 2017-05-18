@@ -13,10 +13,10 @@
 			</button>
 			<div class="col-md-12">
 				<ul class="menu_projeto">
-					<li><a class="navbar-brand" href="#">Home</a></li>
-					<li class="menu_dropdown"><a class="navbar-brand"
-						href="listar_">Chamados em Aberto</a></li>
-					<li><a class="navbar-brand" href="#">SLAs</a></li>
+					<li><a class="navbar-brand" href="listar_adm">Home</a></li>
+<!-- 					<li class="menu_dropdown"><a class="navbar-brand" -->
+<!-- 						href="#">Chamados em Aberto</a></li> -->
+					<li><a class="navbar-brand" href="listar_sla">SLAs</a></li>
 					<li><a class="navbar-brand" href="cadastroSolucionador">Cadastro de Solucionador</a></li>
 					<li style="float: right;"><a class="navbar-brand"
 						href="logout">Logout</a></li>

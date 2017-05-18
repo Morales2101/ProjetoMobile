@@ -78,7 +78,7 @@ public class MapeamentoController {
 		try {
 			us.criar(usuario);
 			criar.setAttribute(LoginController.att, usuario);
-			return "redirect:listar_solucionador";
+			return "redirect:listar_adm";
 		} catch (IOException e) {
 			e.printStackTrace();
 			model.addAttribute("erro", e);
@@ -170,6 +170,29 @@ public class MapeamentoController {
 		}
 		return "erro";
 	}
+	
+	
+	
+	@RequestMapping("listar_sla")
+	public String listagemsla(Model model, String chave) {
+		try {
+			if (chave == null || chave.equals("id")) {
+				model.addAttribute("reclamacao", rs.listarReclamacoes());
+				model.addAttribute("usuario", us.listarCadastro());
+			} else {
+				model.addAttribute("reclamacao", rs.listarReclamacoes());
+				model.addAttribute("usuario", us.listarCadastro());
+			}
+			return "local/reclamacaosla";
+		} catch (Exception e) {
+			e.printStackTrace();
+			model.addAttribute("erro", e);
+		}
+		return "erro";
+	}
+	
+	
+	
 	
 	@RequestMapping("listar_solucionador")
 	public String listagemsolucionador(Model model, String chave) {

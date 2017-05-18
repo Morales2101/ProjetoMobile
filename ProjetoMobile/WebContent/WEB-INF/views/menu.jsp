@@ -13,17 +13,17 @@
                 <div class="col-md-12">
                 <ul class="menu_projeto">
                 	<li>
-                		<a class="navbar-brand" href="#">Home</a>
+                		<a class="navbar-brand" href="listar_reclamacao">Home</a>
                 	</li>
                 	<li class="menu_dropdown">
-                		<a class="navbar-brand" href="listar_#">Chamados</a>
+                		<a class="navbar-brand">Chamados</a>
                 		<ul class="lista_dropdown">
                 			<li><a href="nova_reclamacao">Novo Chamado</a></li>
-                			<li><a href="">Chamados em Aberto</a></li>
+<!--                 			<li><a href="">Chamados em Aberto</a></li> -->
                 		</ul>
                 	</li>
                 	<li>
-                		<a class="navbar-brand" href="#">Faça uma Sugestão</a>
+<!--                 		<a class="navbar-brand" href="#">Faça uma Sugestão</a> -->
                 	</li>
                 	<li style="float:right;">
                 		<a class="navbar-brand" href="logout">Logout</a>
