@@ -46,7 +46,6 @@ public class Secretaria  implements Serializable{
 	private int			id;
 	
 	@NotNull
-	@Size(max=128, min=10)
 	private String		nome;
 	
 	public Secretaria() {
@@ -70,7 +69,7 @@ public class Secretaria  implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Secretaria [id=" + id + ", nome=" + nome + "]";
+		return nome;
 	}
 	
 }

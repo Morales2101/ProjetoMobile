@@ -13,8 +13,6 @@
 </head>
 
 <body >
-    <!-- Barra superior com os menus de navegaÃ§Ã£o
-	<c:import url="menu.jsp"/> -->
     <!-- Container Principal -->
     <div >
     <div id="main" class="container" >
@@ -41,9 +39,6 @@
 				</div>
 				<div class="direita">
 					<a type="submit" class="btn btn-primary"   href="cadastro"> Cadastar</a>
-				</div>
-				<div class=" btn_esqueceu">
-					<button type="submit" class="btn btn-primary" name="command" value="#"> Esqueceu a Senha?</button>
 				</div>
 			</form>    
 			</div>

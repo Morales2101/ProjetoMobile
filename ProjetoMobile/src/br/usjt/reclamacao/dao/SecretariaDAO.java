@@ -26,7 +26,7 @@ public class SecretariaDAO {
 		manager.remove(manager.find(Secretaria.class, secretaria.getId()));
 	}
 	
-	public Secretaria selecionar(String id){
+	public Secretaria selecionar(int id){
 		return manager.find(Secretaria.class, id);
 	}
 	

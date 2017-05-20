@@ -14,7 +14,7 @@
 	/* text-align: center; */
 	padding: 1em;
 	width: 500px;
-	height: 300px;
+	height: 250px!important;
 	margin: 0 auto;
 	margin-top: 113px;
 	border-radius: 12px;
@@ -22,17 +22,22 @@
 
 .lista_dropdown{
 	position:absolute;
-	width: 200px;
+	width: 220px;
 	background: #fff;
 	padding: 0;
 	margin: 0;
 	top: 42px;
 	z-index: 9999;
-	left: 67px;
+	left: 0;
+	list-style-position: inherit;
 	display: none;
 }
 .lista_dropdown li{
-    width: 100%;
+    width: 100%!important;
+    margin: 0;
+    margin-right: 0!important;
+    /* width: 100%; */
+    float: left!important;
     padding: 0!important;
 }
 .lista_dropdown li a{
@@ -40,6 +45,7 @@
     width: 100%;
     /* padding: 0!important; */
     border-radius: 0!important;
+    width: 100%;
 }
 .menu_dropdown:hover .lista_dropdown{
 	display:block;
@@ -110,15 +116,15 @@
 	float:left;
 	list-style:none;
 	margin-right: 2%;
-	/* position: relative; */
+	position: relative;
 	padding: 0.5em 0;
-	/* display: inline-block; */
+	display: block;
 }
 .menu_projeto li a{
 	color:#fff;
 	background:#d60606;
 	border-radius: 3px;
-	padding:0.5em;
+	padding: 0.5em;
 	font-size: 1.1em;
 	height:auto;
 }
@@ -133,3 +139,6 @@ body {
 	background-image: url(../img/fundo.jpg);
 	background-size: cover;
 } 
+.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+    margin-left: 0!important;
+}

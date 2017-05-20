@@ -41,15 +41,15 @@
 				</div>
 				
 				<div class="form-group col-md-4">
-					<label for="tipo">Secretaria</label> 
+					<label for="tipo">Departamento</label> 
 					<select name="Secretaria" class="form-control">
-						<!-- <c:forEach var="Secretaria" items="${Secretaria}">
+						<c:forEach var="Secretaria" items="${secretaria}">
 							<option value="${Secretaria.id}">${Secretaria.nome}</option>
-						</c:forEach> -->
-						<option value="1">RH</option>
-						<option value="2">Vendas</option>
-						<option value="3">Comercial</option>
-						<option value="4">T.I.</option>
+						</c:forEach>
+<!-- 						<option value="1">RH</option> -->
+<!-- 						<option value="2">Vendas</option> -->
+<!-- 						<option value="3">Comercial</option> -->
+<!-- 						<option value="4">T.I.</option> -->
 					</select>
 				</div>
 			</div>
@@ -81,7 +81,7 @@
 			<div id="actions" class="row">
 				<div class="col-md-12">
 					<button type="submit" class="btn btn-primary title"><i class="fa fa-pencil" aria-hidden="true"></i>Enviar sugestão</button>
-					<a href="index" class="btn btn-default">Cancelar</a>
+					<a href="listar_reclamacao" class="btn btn-default">Cancelar</a>
 				</div>
 			</div>
 		</form>

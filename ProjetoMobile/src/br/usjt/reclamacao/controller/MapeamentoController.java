@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import br.usjt.reclamacao.model.Reclamacao;
+import br.usjt.reclamacao.model.Secretaria;
 import br.usjt.reclamacao.model.Usuario;
 import br.usjt.reclamacao.model.Administrador;
 import br.usjt.reclamacao.service.ReclamacaoService;
@@ -31,6 +32,7 @@ public class MapeamentoController {
 	private SecretariaService ss;
 	private UsuarioService us;
 	private AdministradorService as;
+	
 	@Autowired
 	private ServletContext servletContext;
 
@@ -76,7 +78,7 @@ public class MapeamentoController {
 	public String cadastrarSolucionador(Model model, Usuario usuario, HttpSession criar) {
 
 		try {
-			us.criar(usuario);
+			us.criarSolucionador(usuario);
 			criar.setAttribute(LoginController.att, usuario);
 			return "redirect:listar_adm";
 		} catch (IOException e) {
@@ -95,6 +97,7 @@ public class MapeamentoController {
 			List<Usuario> usuario = us.listarCadastro();
 			model.addAttribute("reclamacao", reclamacao);
 			model.addAttribute("usuario", usuario);
+			model.addAttribute("secretaria", ss.listarSecretarias());
 			return "local/reclamacaocriar";
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -191,9 +194,6 @@ public class MapeamentoController {
 		return "erro";
 	}
 	
-	
-	
-	
 	@RequestMapping("listar_solucionador")
 	public String listagemsolucionador(Model model, String chave) {
 		try {
@@ -267,5 +267,25 @@ public class MapeamentoController {
 		}
 		return "erro";
 	}
+	
+	
+	@RequestMapping("cadastroSecretaria")
+	public String cadastroSecretaria() {
+		return "local/secretariacriar";
+	}
+	
+	@RequestMapping("criar_secretaria")
+	public String cadastrar(Model model, Secretaria secretaria, HttpSession criar) {
+
+		try {
+			ss.criar(secretaria);
+			return "redirect:listar_adm";
+		} catch (IOException e) {
+			e.printStackTrace();
+			model.addAttribute("erro", e);
+		}
+		return "erro";
+	}
+
 
 }

@@ -29,6 +29,11 @@ public class UsuarioService {
 		dao.criar(usuario);
 	}
 	
+	public void criarSolucionador(Usuario usuario) throws IOException{
+		usuario.setTipo(Usuario.SOLUCIONADOR);
+		dao.criar(usuario);
+	}
+	
 	public List<Usuario>listarCadastro() throws IOException{
 		return dao.listarCadastro();
 	}

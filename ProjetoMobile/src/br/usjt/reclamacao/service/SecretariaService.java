@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import br.usjt.reclamacao.dao.SecretariaDAO;
 import br.usjt.reclamacao.model.Secretaria;
+import br.usjt.reclamacao.model.Usuario;
 
 @Service
 public class SecretariaService {
@@ -18,5 +19,13 @@ public class SecretariaService {
 	}
 	public List<Secretaria> listarSecretarias() throws IOException{
 		return dao.listarSecretarias();
+	}
+
+	public void criar(Secretaria secretaria) throws IOException{
+		dao.criar(secretaria);
+	}
+	
+	public Secretaria mostrar(Secretaria secretaria) throws IOException {
+		return dao.selecionar(secretaria.getId());
 	}
 }

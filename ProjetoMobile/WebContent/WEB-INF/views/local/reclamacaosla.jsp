@@ -97,6 +97,7 @@
 								<th>Titulo</th>
 								<th>Data / Hora</th>
 								<th>Descrição</th>
+								<th>Departamento</th>
 								<th>Resposta</th>
 								<th>Avaliador</th>
 								<th>Aprovado</th>
@@ -112,6 +113,7 @@
 									<td>${reclamacao.titulo}</td>
 									<td>${reclamacao.dataHora}</td>
 									<td>${reclamacao.descricao}</td>
+									<td>${reclamacao.secretaria}</td>
 									<td>${reclamacao.resposta}</td>
 									<td>${reclamacao.avaliador}</td>
 									<td>${reclamacao.aprovado}</td>

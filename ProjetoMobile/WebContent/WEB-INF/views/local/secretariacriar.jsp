@@ -17,15 +17,15 @@
 
 <body>
 	<!-- Barra superior com os menus de navegação -->
-	<c:import url="../menu.jsp" />
+<%-- 	<c:import url="../menu.jsp" /> --%>
 	<!-- Container Principal -->
 	<div id="main" class="container">
 		<h3 class="page-header">Incluir Secretaria</h3>
 		<!-- Formulario para inclusao de locais -->
-		<form action="incluir_local" method="post" enctype="multipart/form-data">
+		<form action="criar_secretaria" method="post" enctype="multipart/form-data">
 			<!-- area de campos do form -->
 			<div class="row">
-				<div class="form-group col-md-8">
+				<div class="formulario_login">
 					<label for="nome">Secretaria</label> 
 					<input type="text" class="form-control" name="nome" 
 					id="nome" required maxlength="128" 
@@ -37,7 +37,7 @@
 			<div id="actions" class="row">
 				<div class="col-md-12">
 					<button type="submit" class="btn btn-primary">Salvar</button>
-					<a href="index" class="btn btn-default">Cancelar</a>
+					<a href="listar_adm" class="btn btn-default">Cancelar</a>
 				</div>
 			</div>
 		</form>
