@@ -52,10 +52,10 @@
 				</div>
 				</div>
 				<div class="esquerda">
-					<button type="submit" class="btn btn-primary" name="command" value="FazerLogin"> Voltar</button>
+					<button type="submit" class="btn btn-primary" name="command" value="FazerLogin">Cadastar</button>
 				</div>
 				<div class="direita">
-					<button type="submit" class="btn btn-primary" name="command" value="#"> Cadastar</button>
+					<a href="fazer_login" class="btn btn-primary" name="command" value="#">Voltar</a>
 				</div>				
 			</form>    
 			</div>

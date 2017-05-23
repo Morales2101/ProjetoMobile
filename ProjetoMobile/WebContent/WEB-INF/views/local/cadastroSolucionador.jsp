@@ -15,7 +15,7 @@
 <body>
    
     <div id="main" class="container" >
-    <div class="formulario_login" style="height:380px;">
+    <div class="formulario_login">
        <h3 class="page-header" style="    margin: 5% 0;">Cadastro do Solucionador</h3>
        <!-- Formulario de Login -->
         <form action="cadastrarSolucionador" method="post">
