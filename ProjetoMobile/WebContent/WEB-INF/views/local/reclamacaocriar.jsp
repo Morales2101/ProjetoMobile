@@ -42,7 +42,7 @@
 				
 				<div class="form-group col-md-4">
 					<label for="tipo">Departamento</label> 
-					<select name="Secretaria" class="form-control">
+					<select name="secretaria.id" class="form-control">
 						<c:forEach var="Secretaria" items="${secretaria}">
 							<option value="${Secretaria.id}">${Secretaria.nome}</option>
 						</c:forEach>

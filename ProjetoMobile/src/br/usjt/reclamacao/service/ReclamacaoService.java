@@ -6,6 +6,10 @@ import java.io.File;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -19,19 +23,22 @@ import org.springframework.web.multipart.MultipartFile;
 
 import br.usjt.reclamacao.dao.ReclamacaoDAO;
 import br.usjt.reclamacao.model.Reclamacao;
+import br.usjt.reclamacao.model.Secretaria;
 import br.usjt.reclamacao.model.Usuario;
 
 
 @Service
 public class ReclamacaoService{
 	private ReclamacaoDAO reclamacaoDAO;
-	private UsuarioService usuarioService; 
+	private UsuarioService usuarioService;
+	private SecretariaService secretariaService;
 	
 	
 	@Autowired
-	public ReclamacaoService(ReclamacaoDAO reclamacaoDAO , UsuarioService usuarioService){
+	public ReclamacaoService(ReclamacaoDAO reclamacaoDAO , UsuarioService usuarioService, SecretariaService secretariaService){
 		this.reclamacaoDAO = reclamacaoDAO;
 		this.usuarioService = usuarioService;
+		this.secretariaService = secretariaService;
 	}
 	
 	public void criar(Reclamacao reclamacao) throws IOException{
@@ -40,7 +47,7 @@ public class ReclamacaoService{
 		reclamacaoDAO.criar(reclamacao);
 	}
 
-	public void remover(Reclamacao reclamacao) throws IOException{
+	public void remover(ServletContext servletContext, Reclamacao reclamacao) throws IOException{
 		reclamacaoDAO.excluir(reclamacao);
 	}
 	
@@ -96,5 +103,4 @@ public class ReclamacaoService{
 		Date dataHora = Calendar.getInstance().getTime();
 		return df.format(dataHora);
 	}
-	
 }

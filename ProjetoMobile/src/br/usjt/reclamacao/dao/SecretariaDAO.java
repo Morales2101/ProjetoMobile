@@ -34,5 +34,6 @@ public class SecretariaDAO {
 	public List<Secretaria> listarSecretarias(){
 		return manager.createQuery("SELECT s from Secretaria s").getResultList();
 	}
+	
 
 }

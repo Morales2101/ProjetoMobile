@@ -247,7 +247,7 @@ public class MapeamentoController {
 	@RequestMapping("remover_reclamacao")
 	public String remover(Reclamacao reclamacao, Model model) {
 		try {
-			rs.remover(reclamacao);
+			rs.remover(servletContext, reclamacao);
 			return "redirect:listar_reclamacao";
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -259,7 +259,7 @@ public class MapeamentoController {
 	@RequestMapping("remover_adm")
 	public String removerAdm(Reclamacao reclamacao, Model model) {
 		try {
-			rs.remover(reclamacao);
+			rs.remover(servletContext, reclamacao);
 			return "redirect:listar_adm";
 		} catch (IOException e) {
 			e.printStackTrace();

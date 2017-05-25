@@ -64,7 +64,4 @@ public class ReclamacaoDAO {
 		List<Reclamacao> resultado = query.getResultList();
 		return resultado;
 	}
-	
-	
-
 }
