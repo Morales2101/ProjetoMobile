@@ -40,24 +40,27 @@
 			<div class="row">
 				<div class="form-group col-md-8">
 					<label for="titulo">Digita o departamento</label> <input
-						type="text" class="form-control" name="departamento" id="departamento" required
-						maxlength="128" placeholder="escreva um departamento">
+						type="text" class="form-control" name="departamento"
+						id="departamento" required maxlength="128"
+						placeholder="escreva um departamento">
 				</div>
 			</div>
 
 
-			<label for="titulo">Digita o nivel do SLA</label> 
-			<select name="sla" id="sla"
-				class="form-control">
-				<option value="1">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
-				<option value="5">5</option>
-				<option value="6">6</option>
-				<option value="7">7</option>
-			</select>
-
+			<label for="titulo">Digita o nivel do SLA</label>
+			<div class="row">
+				<div class="form-group col-md-2">
+					<select name="sla" id="sla" class="form-control">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+					</select>
+				</div>
+			</div>
 
 
 			<hr />
