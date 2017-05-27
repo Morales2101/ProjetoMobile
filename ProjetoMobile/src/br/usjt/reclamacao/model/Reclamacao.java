@@ -14,11 +14,12 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name="reclamacao")
-public class Reclamacao  implements Serializable {
+@Table(name = "reclamacao")
+public class Reclamacao implements Serializable {
 
 	/**
 	 * 
@@ -49,35 +50,32 @@ public class Reclamacao  implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int			id;
-		
-	@NotNull
-	private String		titulo;
-	
-	@NotNull
-	private String		descricao;
-	
-	@ManyToOne
-	@JoinColumn(name="idCidadao")
-	private Usuario		cidadao;
+	private int id;
 
-	private Date 		dataHora;
+	@NotNull
+	private String titulo;
+
+	@NotNull
+	private String descricao;
 
 	@ManyToOne
-	@JoinColumn(name="idSecretaria")
-	private Secretaria 	secretaria;
-	
+	@JoinColumn(name = "idCidadao")
+	private Usuario cidadao;
+
+	private Date dataHora;
+
+	// @ManyToOne
+	// @JoinColumn(name="idSecretaria")
+	// private Secretaria secretaria;
+
 	@Column(nullable = true)
-	private boolean		aprovado;
-	
-	@ManyToOne
-	@JoinColumn(name="idAvaliador",nullable=true)
-	private Usuario		avaliador;
-	private String		resposta;
-	private String		fotoAnexa;
-	
-	
-	
+	private boolean aprovado;
+
+	 @ManyToOne
+	 @JoinColumn(name="idAvaliador",nullable=true)
+	 private Usuario avaliador;
+	private String resposta;
+
 	public int getId() {
 		return id;
 	}
@@ -118,13 +116,13 @@ public class Reclamacao  implements Serializable {
 		this.dataHora = dataHora;
 	}
 
-	public Secretaria getSecretaria() {
-		return secretaria;
-	}
-
-	public void setSecretaria(Secretaria secretaria) {
-		this.secretaria = secretaria;
-	}
+	// public Secretaria getSecretaria() {
+	// return secretaria;
+	// }
+	//
+	// public void setSecretaria(Secretaria secretaria) {
+	// this.secretaria = secretaria;
+	// }
 
 	public boolean isAprovado() {
 		return aprovado;
@@ -134,13 +132,13 @@ public class Reclamacao  implements Serializable {
 		this.aprovado = aprovado;
 	}
 
-	public Usuario getAvaliador() {
-		return avaliador;
-	}
-
-	public void setAvaliador(Usuario avaliador) {
-		this.avaliador = avaliador;
-	}
+	 public Usuario getAvaliador() {
+	 return avaliador;
+	 }
+	
+	 public void setAvaliador(Usuario avaliador) {
+	 this.avaliador = avaliador;
+	 }
 
 	public String getResposta() {
 		return resposta;
@@ -150,18 +148,9 @@ public class Reclamacao  implements Serializable {
 		this.resposta = resposta;
 	}
 
-	public String getFotoAnexa() {
-		return fotoAnexa;
-	}
-
-	public void setFotoAnexa(String fotoAnexa) {
-		this.fotoAnexa = fotoAnexa;
-	}
-
 	@Override
 	public String toString() {
-		return "Reclamacao [id=" + id + ", titulo=" + titulo + ", descricao=" + descricao + ", cidadao=" + cidadao
-				+ ", dataHora=" + dataHora + ", secretaria=" + secretaria + ", aprovado="
-				+ aprovado + ", avaliador=" + avaliador + ", resposta=" + resposta + ", fotoAnexa=" + fotoAnexa + "]";
+		return "Reclamacao [id=" + id + ", titulo=" + titulo + ", descricao=" + descricao + ", Id.cidadao=" + cidadao
+				+ ", dataHora=" + dataHora + ", aprovado=" + aprovado + ", resposta=" + resposta + "]";
 	}
 }

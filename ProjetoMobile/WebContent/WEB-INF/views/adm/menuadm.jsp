@@ -15,12 +15,7 @@
 				<ul class="menu_projeto">
 					<li><a class="navbar-brand" href="listar_adm">Home</a></li>
 					<li><a class="navbar-brand" href="listar_sla">SLAs</a></li>
-					<li><a class="navbar-brand" href="cadastroSolucionador">Cadastro de Solucionador</a></li>
-					<li class="menu_dropdown"><a class="navbar-brand">Departamentos</a>
-                		<ul class="lista_dropdown">
-                			<li><a class="navbar-brand" href="cadastroSecretaria">Cadastro de Departamento</a></li>
-                			<li><a href="">Departamentos Cadastrados</a></li>
-                		</ul>
+					<li><a class="navbar-brand" href="cadastrosolucionador">Cadastro de Solucionador</a></li>
 					</li>
 				
 					<li style="float: right;"><a class="navbar-brand"

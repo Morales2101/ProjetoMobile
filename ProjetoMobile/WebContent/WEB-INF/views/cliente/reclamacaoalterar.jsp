@@ -19,39 +19,44 @@
 
 <body style="background: transparent;">
 	<!-- Barra superior com os menus de navegação -->
-	<c:import url="../menu.jsp" />
+	<c:import url="menuuser.jsp" />
 	<!-- Container Principal -->
 	<div id="main" class="container">
 		<h3 class="page-header">Alterar Reclamacao #${reclamacao.id}</h3>
 		<!-- Formulario para alteracao de locais -->
-		<form action="solucionador_atualiza" method="post"> <!--  enctype="multipart/form-data"-->
+		<form action="atualizar_reclamacao" method="post"> <!--  enctype="multipart/form-data"-->
 			<!-- area de campos do form -->
 			<input type="hidden" name=id value="${reclamacao.id}">
 			<div class="row">
-				<div class="form-group col-md-4">
-					<label for="Secretaria">Secretaria</label> 
-					<select name="secretaria.id" class="form-control">
-						<c:choose>
-							<c:when test="${not empty secretarias}">
-							 <c:forEach var="secretaria" items="${secretarias}">
-								<c:if test="${secretaria.id != reclamacao.secretaria.id}">
-									<option value="${secretaria.id}">${secretaria.nome}</option>
-								</c:if>
-								<c:if test="${secretaria.id eq reclamacao.secretaria.id}">
-									<option value="${secretaria.id}" selected>${secretaria.nome}</option>
-								</c:if>
-							</c:forEach>
-						    </c:when>
-							<c:otherwise>
-								<option value="1">RH</option>
-								<option value="2">Vendas</option>
-								<option value="3">Comercial</option>
-								<option value="4">T.I.</option>
-							</c:otherwise>
-						</c:choose>
-					</select>
+			
+			
+				<div class="form-group col-md-8">
+					<label for="titulo">Título</label> 
+					<input type="text" class="form-control" name="titulo" 
+					id="titulo" required maxlength="128"  value="${reclamacao.titulo}"
+					placeholder="Título da Reclamacao">
+				</div>
+				
+				</div>
+			
+			
+			<div class="row">
+				<div class="form-group col-md-12">
+					<label for="descricao">Descrição</label> 
+					<textarea placeholder="descreva aqui sua sugestão" class="form-control" name="descricao" 
+					id="descricao" required maxlength="128" rows="4" cols="50" >${reclamacao.descricao}</textarea> 
 				</div>
 			</div>
+				
+			<div class="row">
+				<div class="form-group col-md-2">
+					<label for="cidadao">Login do reclamante</label> <input
+						type="text" class="form-control" disabled="disabled" value="${usuarioLogado.id}">
+
+						 <input	type="hidden" name="cidadao.id" class="form-control" value="${usuarioLogado.id}">
+				</div>
+			</div>
+    	      
     	      
 			<hr />
 			<div id="actions" class="row">

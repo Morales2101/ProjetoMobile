@@ -12,10 +12,13 @@
                 </button>
                 <div class="col-md-12">
                 <ul class="menu_projeto">
-                	<li><a class="navbar-brand" href="#">Home</a></li>
-                	<li class="menu_ropdown"><a class="navbar-brand" href="listar_">Chamados em Aberto</a></li>
-					
-                	<li style="float: right;"><a class="navbar-brand" href="logout">Logout</a></li>
+                	<li>
+                		<a class="navbar-brand" href="listar_solucionador">Home</a>
+                	</li>
+
+                	<li style="float:right;">
+                		<a class="navbar-brand" href="logout">Logout</a>
+                	</li>
                 </ul>
                 </div>
             </div>

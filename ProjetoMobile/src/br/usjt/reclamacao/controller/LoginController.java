@@ -39,7 +39,7 @@ public class LoginController {
 					return "redirect:listar_reclamacao";
 				}else if( usuario.getTipo().equals(Usuario.ADMINISTRADOR)){
 					return "redirect:listar_adm";
-				}else{
+				}else if( usuario.getTipo().equals(Usuario.SOLUCIONADOR)){
 					return "redirect:listar_solucionador";
 				}
 			}
@@ -52,6 +52,23 @@ public class LoginController {
 
 		return "redirect:loginForm";
 	}
+	
+	
+	@RequestMapping("cadastrar")
+	public String cadastrar(Model model, Usuario usuario, HttpSession criar) {
+
+		try {
+			us.criar(usuario);
+			criar.setAttribute(LoginController.att, usuario);
+			return "redirect:listar_reclamacao";
+		} catch (IOException e) {
+			e.printStackTrace();
+			model.addAttribute("erro", e);
+		}
+		return "erro";
+	}
+	
+	
 	@RequestMapping("logout")
 	public String logout(HttpSession session) {
 		session.invalidate();

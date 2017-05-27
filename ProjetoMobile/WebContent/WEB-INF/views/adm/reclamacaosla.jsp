@@ -9,7 +9,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Solucionador</title>
+<title>SLA</title>
 
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
@@ -23,8 +23,7 @@
 
 <body style="background: #f7f7f7;">
 	<!-- Barra superior com os menus de navegação -->
-	<jsp:include page="menuSolucionador.jsp"/>
-	
+	<c:import url="menuadm.jsp" />
 
 	<!-- Modal -->
 	<div class="modal fade" id="delete-modal" tabindex="-1" role="dialog"
@@ -53,7 +52,7 @@
 	<!-- /.modal -->
 	<!-- Container Principal -->
 	<div id="main" class="container-fluid">
-		<form action="listar_solucionador" method="post">
+		<form action="listar_sla" method="post">
 			<div id="top" class="row">
 				<!--  <div class="col-md-3 title">
 					<h2><i class="fa fa-home" aria-hidden="true"></i>Home</h2>
@@ -94,33 +93,65 @@
 					<table class="table table-striped">
 						<thead>
 							<tr>
-								<th>Solicitante</th>
+								<th>ID</th>
+								<th>Email</th>
 								<th>Titulo</th>
-								<th>Data / Hora</th>
 								<th>Descrição</th>
+								<th>Data / Hora</th>
 								<th>Departamento</th>
 								<th>Resposta</th>
 								<th>Avaliador</th>
-								<th>Aprovado</th>
+								<th>Status</th>
+								<th>SLA</th>
 								<th class="actions">A&ccedil;&otilde;es</th>
 							</tr>
 						</thead>
 						<tbody>
 							<c:forEach var="reclamacao" items="${reclamacao}">
+
 								<tr>
-									<td>${reclamacao.cidadao}</td>
+									<td>${reclamacao.id}</td>
+									<td>${reclamacao.cidadao.email}</td>
 									<td>${reclamacao.titulo}</td>
-									<td>${reclamacao.dataHora}</td>
 									<td>${reclamacao.descricao}</td>
-									<td>${reclamacao.secretaria}</td>
+									<td>${reclamacao.dataHora}</td>
+									<td>${reclamacao.cidadao.cargo}</td>
 									<td>${reclamacao.resposta}</td>
-									<td>${reclamacao.avaliador}</td>
-									<td>${reclamacao.aprovado}</td>									
+									<td>${reclamacao.avaliador.email}</td>
+
+									<c:choose>
+										<c:when test="${reclamacao.aprovado eq true}">
+											<td>Resolvido.</td>
+										</c:when>
+										<c:when test="${reclamacao.cidadao.cargo eq false}">
+											<td>Pedente.</td>
+										</c:when>
+									</c:choose>
+
+									<c:choose>
+										<c:when test="${reclamacao.cidadao.cargo eq 'R.H'}">
+											<td>2</td>
+										</c:when>
+										<c:when test="${reclamacao.cidadao.cargo eq 'T.I.'}">
+											<td>1</td>
+										</c:when>
+										<c:when test="${reclamacao.cidadao.cargo eq 'Vendas'}">
+											<td>3</td>
+										</c:when>
+										<c:when test="${reclamacao.cidadao.cargo eq 'Comercial'}">
+											<td>4</td>
+										</c:when>
+									</c:choose>
+									<%-- 									<c:if test="${reclamacao.cidadao.cargo eq 'R.dH'}"> --%>
+									<!-- 										<td>33</td> -->
+									<%-- 									</c:if> --%>
+
 									<td class="actions"><a class="btn btn-success btn-xs"
-										href="#?id=${reclamacao.id}">Solucionar</a> <a
+										href="mostrar_reclamacaoadm?id=${reclamacao.id}">Exibir</a> <a
 										class="btn btn-warning btn-xs"
-										href="#?id=${reclamacao.id}">Responder</a>
-									</td>
+										href="alterar_reclamacaoadm?id=${reclamacao.id}">Alterar</a> <a
+										class="btn btn-danger btn-xs"
+										href="removersla_adm?id=${reclamacao.id}">Excluir</a></td>
 								</tr>
 							</c:forEach>
 

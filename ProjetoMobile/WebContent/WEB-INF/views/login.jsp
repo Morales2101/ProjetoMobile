@@ -38,7 +38,7 @@
 					<button type="submit" class="btn btn-primary" name="command" value="FazerLogin"> Logar</button>
 				</div>
 				<div class="direita">
-					<a type="submit" class="btn btn-primary"   href="cadastro"> Cadastar</a>
+					<a type="submit" class="btn btn-primary"   href="cadastrouser"> Cadastar</a>
 				</div>
 			</form>    
 			</div>

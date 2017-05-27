@@ -23,8 +23,8 @@
 
 <body style="background: #f7f7f7;">
 	<!-- Barra superior com os menus de navegação -->
-	<jsp:include page="menuadm.jsp"/>
-	
+	<jsp:include page="menuadm.jsp" />
+
 
 	<!-- Modal -->
 	<div class="modal fade" id="delete-modal" tabindex="-1" role="dialog"
@@ -96,31 +96,38 @@
 							<tr>
 								<th>Solicitante</th>
 								<th>Titulo</th>
-								<th>Data / Hora</th>
 								<th>Descrição</th>
+								<th>Data / Hora</th>
 								<th>Departamento</th>
 								<th>Resposta</th>
 								<th>Avaliador</th>
-								<th>Aprovado</th>
-								<th class="actions">A&ccedil;&otilde;es</th>
+								<th>Status</th>
 							</tr>
 						</thead>
 						<tbody>
 							<c:forEach var="reclamacao" items="${reclamacao}">
 								<tr>
-									<td>${reclamacao.cidadao}</td>
+									<td>${reclamacao.cidadao.email}</td>
 									<td>${reclamacao.titulo}</td>
-									<td>${reclamacao.dataHora}</td>
 									<td>${reclamacao.descricao}</td>
-									<td>${reclamacao.secretaria}</td>
+									<td>${reclamacao.dataHora}</td>
+									<td>${reclamacao.cidadao.cargo}</td>
 									<td>${reclamacao.resposta}</td>
-									<td>${reclamacao.avaliador}</td>
-									<td>${reclamacao.aprovado}</td>									
-									<td class="actions">
-<%-- 									<a class="btn btn-success btn-xs" href="#?id=${reclamacao.id}">Solucionar</a>  --%>
-<%-- 									<a class="btn btn-warning btn-xs" href="#?id=${reclamacao.id}">Responder</a> --%>
-									<a class="btn btn-danger btn-xs"  href="remover_adm?id=${reclamacao.id}">Excluir</a>
-									</td>
+									<td>${reclamacao.avaliador.email}</td>
+									<c:choose>
+										<c:when test="${reclamacao.aprovado eq true}">
+											<td>Resolvido.</td>
+										</c:when>
+										<c:when test="${reclamacao.cidadao.cargo eq false}">
+											<td>Pedente.</td>
+										</c:when>
+									</c:choose>
+
+
+									<!-- 									<td class="actions"> -->
+									<!-- 										<a class="btn btn-danger btn-xs" -->
+									<%-- 										href="removersla_adm?id=${reclamacao.id}">Excluir</a> --%>
+									<!-- 									</td> -->
 								</tr>
 							</c:forEach>
 

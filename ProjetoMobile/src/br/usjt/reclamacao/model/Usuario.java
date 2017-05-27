@@ -12,37 +12,35 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name="usuario")
-public class Usuario implements Serializable{
+@Table(name = "usuario")
+public class Usuario implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
-	
+
 	public static final String CIDADAO = "cidadao";
-	
+
 	public static final String SOLUCIONADOR = "solucionador";
-	
+
 	public static final String ADMINISTRADOR = "adm";
-	
+
 	private String tipo;
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int			id;
-	private String		nome;
-	private String		cpf;
-	private String		email;
-	
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
+	private String nome;
+	private String cpf;
+	private String email;
+
 	@NotNull
-	@Size(max=100)
-	private String		senha;
-	private String		cargo;
-	
-	
-	@ManyToOne
-	@JoinColumn(nullable = true, name="idSecretaria")
-	private Secretaria	secretaria;
-	
+	@Size(max = 100)
+	private String senha;
+	private String cargo;
+
+	// @ManyToOne
+	// @JoinColumn(nullable = true, name="idSecretaria")
+	// private Secretaria secretaria;
+
 	public Usuario() {
 	}
 
@@ -61,7 +59,6 @@ public class Usuario implements Serializable{
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
 
 	public String getCpf() {
 		return cpf;
@@ -95,13 +92,13 @@ public class Usuario implements Serializable{
 		this.cargo = cargo;
 	}
 
-	public Secretaria getSecretaria() {
-		return secretaria;
-	}
-
-	public void setSecretaria(Secretaria secretaria) {
-		this.secretaria = secretaria;
-	}
+	// public Secretaria getSecretaria() {
+	// return secretaria;
+	// }
+	//
+	// public void setSecretaria(Secretaria secretaria) {
+	// this.secretaria = secretaria;
+	// }
 
 	public String getTipo() {
 		return tipo;
@@ -110,20 +107,13 @@ public class Usuario implements Serializable{
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
-	
-	
+//
 //	@Override
 //	public String toString() {
-//		return "Usuario [id=" + id + ", nome=" + nome + ", cpf="
-//				+ cpf + ", email=" + email + ", senha=" + senha + ", cargo=" + cargo + ", secretaria=" + secretaria
-//				+ "]";
+//		return "Usuario [id=" + id + ", nome=" + nome + ", cpf=" + cpf + ", email=" + email + ", senha=" + senha
+//				+ ", cargo=" + cargo + "]";
 //	}
 
-
-	@Override
-	public String toString() {
-		return nome;
-	}
 
 	@Override
 	public int hashCode() {
@@ -134,58 +124,58 @@ public class Usuario implements Serializable{
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
 		result = prime * result + id;
 		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
-		result = prime * result + ((secretaria == null) ? 0 : secretaria.hashCode());
 		result = prime * result + ((senha == null) ? 0 : senha.hashCode());
 		result = prime * result + ((tipo == null) ? 0 : tipo.hashCode());
 		return result;
 	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Usuario other = (Usuario) obj;
-		if (cargo == null) {
-			if (other.cargo != null)
-				return false;
-		} else if (!cargo.equals(other.cargo))
-			return false;
-		if (cpf == null) {
-			if (other.cpf != null)
-				return false;
-		} else if (!cpf.equals(other.cpf))
-			return false;
-		if (email == null) {
-			if (other.email != null)
-				return false;
-		} else if (!email.equals(other.email))
-			return false;
-		if (id != other.id)
-			return false;
-		if (nome == null) {
-			if (other.nome != null)
-				return false;
-		} else if (!nome.equals(other.nome))
-			return false;
-		if (secretaria == null) {
-			if (other.secretaria != null)
-				return false;
-		} else if (!secretaria.equals(other.secretaria))
-			return false;
-		if (senha == null) {
-			if (other.senha != null)
-				return false;
-		} else if (!senha.equals(other.senha))
-			return false;
-		if (tipo == null) {
-			if (other.tipo != null)
-				return false;
-		} else if (!tipo.equals(other.tipo))
-			return false;
-		return true;
-	}	
 }
+//
+// @Override
+// public boolean equals(Object obj) {
+// if (this == obj)
+// return true;
+// if (obj == null)
+// return false;
+// if (getClass() != obj.getClass())
+// return false;
+// Usuario other = (Usuario) obj;
+// if (cargo == null) {
+// if (other.cargo != null)
+// return false;
+// } else if (!cargo.equals(other.cargo))
+// return false;
+// if (cpf == null) {
+// if (other.cpf != null)
+// return false;
+// } else if (!cpf.equals(other.cpf))
+// return false;
+// if (email == null) {
+// if (other.email != null)
+// return false;
+// } else if (!email.equals(other.email))
+// return false;
+// if (id != other.id)
+// return false;
+// if (nome == null) {
+// if (other.nome != null)
+// return false;
+// } else if (!nome.equals(other.nome))
+// return false;
+// if (secretaria == null) {
+// if (other.secretaria != null)
+// return false;
+// } else if (!secretaria.equals(other.secretaria))
+// return false;
+// if (senha == null) {
+// if (other.senha != null)
+// return false;
+// } else if (!senha.equals(other.senha))
+// return false;
+// if (tipo == null) {
+// if (other.tipo != null)
+// return false;
+// } else if (!tipo.equals(other.tipo))
+// return false;
+// return true;
+// }
+// }

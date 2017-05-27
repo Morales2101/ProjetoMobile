@@ -10,7 +10,6 @@ import javax.persistence.TypedQuery;
 import org.springframework.stereotype.Repository;
 
 import br.usjt.reclamacao.model.Reclamacao;
-import br.usjt.reclamacao.model.Usuario;
 
 @Repository
 public class ReclamacaoDAO {
@@ -64,4 +63,7 @@ public class ReclamacaoDAO {
 		List<Reclamacao> resultado = query.getResultList();
 		return resultado;
 	}
+	
+	
+
 }

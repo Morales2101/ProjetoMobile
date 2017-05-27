@@ -23,7 +23,7 @@
 
 <body style="background: #f7f7f7;">
 	<!-- Barra superior com os menus de navegação -->
-	<c:import url="../menu.jsp" />
+	<c:import url="menusolucionador.jsp" />
 
 	<!-- Modal -->
 	<div class="modal fade" id="delete-modal" tabindex="-1" role="dialog"
@@ -52,7 +52,7 @@
 	<!-- /.modal -->
 	<!-- Container Principal -->
 	<div id="main" class="container-fluid">
-		<form action="listar_reclamacao" method="post">
+		<form action="listar_solucionador" method="post">
 			<div id="top" class="row">
 				<!--  <div class="col-md-3 title">
 					<h2><i class="fa fa-home" aria-hidden="true"></i>Home</h2>
@@ -99,7 +99,7 @@
 								<th>Descrição</th>
 								<th>Resposta</th>
 								<th>Avaliador</th>
-								<th>Aprovado</th>
+								<th>Status</th>
 								<th class="actions">A&ccedil;&otilde;es</th>
 							</tr>
 						</thead>
@@ -111,13 +111,23 @@
 									<td>${reclamacao.dataHora}</td>
 									<td>${reclamacao.descricao}</td>
 									<td>${reclamacao.resposta}</td>
-									<td>${reclamacao.avaliador}</td>
-									<td>${reclamacao.aprovado}</td>						<td class="actions"><a class="btn btn-success btn-xs"
-										href="mostrar_reclamacao?id=${reclamacao.id}">Exibir</a> <a
-										class="btn btn-warning btn-xs"
-										href="alterar_reclamacao?id=${reclamacao.id}">Alterar</a>
-									<a class="btn btn-danger btn-xs" href="remover_reclamacao?id=${reclamacao.id}">Excluir</a>
-									</td>
+									<td>${reclamacao.avaliador.email}</td>
+									<c:choose>
+										<c:when test="${reclamacao.aprovado eq true}">
+											<td>Resolvido.</td>
+										</c:when>
+										<c:when test="${reclamacao.cidadao.cargo eq false}">
+											<td>Pedente.</td>
+										</c:when>
+									</c:choose>
+
+									<c:if test="${reclamacao.aprovado eq false}">
+										<!-- 									<a class="btn btn-success btn-xs" -->
+										<%-- 										href="mostrar_reclamacao?id=${reclamacao.id}">Exibir</a> --%>
+										<td class="actions">
+										<a class="btn btn-warning btn-xs"
+										href="alterar_reclamacaoslc?id=${reclamacao.id}">Responder</a></td>
+									</c:if>
 								</tr>
 							</c:forEach>
 
