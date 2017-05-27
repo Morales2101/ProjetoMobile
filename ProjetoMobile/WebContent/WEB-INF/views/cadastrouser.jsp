@@ -56,14 +56,15 @@
 								<span class="glyphicon glyphicon-option-horizontal"
 									aria-hidden="true"></span>
 							</div>
-							<!-- 					   <input type="text" name="cargo" id="cargo" class="form-control" placeholder="Setor" required/> -->
-							<select name="cargo" id="cargo" placeholder="Setor"
-								class="form-control">
-								<option value="R.H">R.H</option>
-								<option value="Vendas">Vendas</option>
-								<option value="Comercial">Comercial</option>
-								<option value="T.I.">T.I.</option>
+
+
+							<select name="cargo" id="cargo" class="form-control">
+								<c:forEach var="secretaria" items="${secretaria}">
+									<option value="${secretaria.departamento}">${secretaria.departamento}</option>
+								</c:forEach>
 							</select>
+
+
 						</div>
 					</div>
 					<div class="form-group">

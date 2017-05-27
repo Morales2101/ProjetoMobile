@@ -123,28 +123,16 @@
 										<c:when test="${reclamacao.aprovado eq true}">
 											<td>Resolvido.</td>
 										</c:when>
-										<c:when test="${reclamacao.cidadao.cargo eq false}">
+										<c:when test="${reclamacao.aprovado eq false}">
 											<td>Pedente.</td>
 										</c:when>
 									</c:choose>
 
-									<c:choose>
-										<c:when test="${reclamacao.cidadao.cargo eq 'R.H'}">
-											<td>2</td>
-										</c:when>
-										<c:when test="${reclamacao.cidadao.cargo eq 'T.I.'}">
-											<td>1</td>
-										</c:when>
-										<c:when test="${reclamacao.cidadao.cargo eq 'Vendas'}">
-											<td>3</td>
-										</c:when>
-										<c:when test="${reclamacao.cidadao.cargo eq 'Comercial'}">
-											<td>4</td>
-										</c:when>
-									</c:choose>
-									<%-- 									<c:if test="${reclamacao.cidadao.cargo eq 'R.dH'}"> --%>
-									<!-- 										<td>33</td> -->
-									<%-- 									</c:if> --%>
+									<c:forEach var="secretaria" items="${secretaria}">
+										<c:if test="${reclamacao.cidadao.cargo eq secretaria.departamento}">
+											<td>${secretaria.sla}</td>
+										</c:if>
+									</c:forEach>
 
 									<td class="actions"><a class="btn btn-success btn-xs"
 										href="mostrar_reclamacaoadm?id=${reclamacao.id}">Exibir</a> <a

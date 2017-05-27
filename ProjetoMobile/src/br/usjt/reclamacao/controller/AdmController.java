@@ -1,6 +1,7 @@
 package br.usjt.reclamacao.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpSession;
@@ -13,8 +14,10 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.usjt.reclamacao.model.Reclamacao;
+import br.usjt.reclamacao.model.Secretaria;
 import br.usjt.reclamacao.model.Usuario;
 import br.usjt.reclamacao.service.ReclamacaoService;
+import br.usjt.reclamacao.service.SecretariaService;
 import br.usjt.reclamacao.service.SolucionadorService;
 import br.usjt.reclamacao.service.UsuarioService;
 
@@ -24,15 +27,17 @@ public class AdmController {
 	private ReclamacaoService rs;
 	private UsuarioService us;
 	private SolucionadorService ss;
+	private SecretariaService secs;
 
 	@Autowired
 	private ServletContext servletContext;
 
 	@Autowired
-	public AdmController(ReclamacaoService rs, UsuarioService us, SolucionadorService ss) {
+	public AdmController(ReclamacaoService rs, UsuarioService us, SolucionadorService ss, SecretariaService secs) {
 		this.rs = rs;
 		this.us = us;
 		this.ss = ss;
+		this.secs = secs;
 	}
 
 	@RequestMapping("listar_adm")
@@ -57,9 +62,11 @@ public class AdmController {
 			if (chave == null || chave.equals("id")) {
 				model.addAttribute("reclamacao", rs.listarReclamacoes());
 				model.addAttribute("usuario", us.listarCadastro());
+				model.addAttribute("secretaria", secs.listarSecretaria());
 			} else {
 				model.addAttribute("reclamacao", rs.listarReclamacoes());
 				model.addAttribute("usuario", us.listarCadastro());
+				model.addAttribute("secretaria", secs.listarSecretaria());
 			}
 			return "adm/reclamacaosla";
 		} catch (Exception e) {
@@ -130,6 +137,33 @@ public class AdmController {
 		try {
 			ss.criar(usuario);
 			criar.setAttribute(LoginController.att, usuario);
+			return "redirect:listar_adm";
+		} catch (IOException e) {
+			e.printStackTrace();
+			model.addAttribute("erro", e);
+		}
+		return "erro";
+	}
+	
+	
+	@RequestMapping("novo_departamento")
+	public String form(Model model) {
+
+		try {
+			List<Secretaria> secretaria = secs.listarSecretaria();
+			model.addAttribute("secretaria", secretaria);
+			return "adm/departamentocriar";
+		} catch (IOException e) {
+			e.printStackTrace();
+			model.addAttribute("erro", e);
+		}
+		return "erro";
+	}
+	
+	@RequestMapping("incluir_departamento")
+	public String inclusao(Secretaria secretaria, Model model) {
+		try {
+			secs.criar(secretaria);
 			return "redirect:listar_adm";
 		} catch (IOException e) {
 			e.printStackTrace();

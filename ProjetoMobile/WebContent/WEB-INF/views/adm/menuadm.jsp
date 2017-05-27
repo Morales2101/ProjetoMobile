@@ -15,9 +15,15 @@
 				<ul class="menu_projeto">
 					<li><a class="navbar-brand" href="listar_adm">Home</a></li>
 					<li><a class="navbar-brand" href="listar_sla">SLAs</a></li>
-					<li><a class="navbar-brand" href="cadastrosolucionador">Cadastro de Solucionador</a></li>
+					<li><a class="navbar-brand" href="cadastrosolucionador">Cadastro
+							de Solucionador</a></li>
 					</li>
-				
+					<li class="menu_dropdown"><a class="navbar-brand">Departamentos</a>
+						<ul class="lista_dropdown">
+							<li><a href="novo_departamento">Criar novo departamentos</a></li>
+							<!--                 			<li><a href="">Chamados em Aberto</a></li> -->
+						</ul></li>
+
 					<li style="float: right;"><a class="navbar-brand"
 						href="logout">Logout</a></li>
 				</ul>
