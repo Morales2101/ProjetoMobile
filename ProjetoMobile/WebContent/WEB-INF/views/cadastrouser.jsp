@@ -58,9 +58,9 @@
 							</div>
 
 
-							<select name="cargo" id="cargo" class="form-control">
+							<select name="idcargo.id" id="idcargo" class="form-control">
 								<c:forEach var="secretaria" items="${secretaria}">
-									<option value="${secretaria.departamento}">${secretaria.departamento}</option>
+									<option value="${secretaria.id}">${secretaria.departamento}</option>
 								</c:forEach>
 							</select>
 

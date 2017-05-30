@@ -6,11 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.usjt.reclamacao.dao.UsuarioDAO;
+import br.usjt.reclamacao.model.Secretaria;
 import br.usjt.reclamacao.model.Usuario;
 
 @Service
 public class UsuarioService {
 	UsuarioDAO dao;
+	
 	@Autowired
 	public UsuarioService(UsuarioDAO dao) {
 		this.dao = dao;

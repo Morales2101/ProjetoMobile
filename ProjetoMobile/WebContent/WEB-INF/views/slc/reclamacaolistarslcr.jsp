@@ -116,7 +116,7 @@
 										<c:when test="${reclamacao.aprovado eq true}">
 											<td>Resolvido.</td>
 										</c:when>
-										<c:when test="${reclamacao.cidadao.cargo eq false}">
+										<c:when test="${reclamacao.aprovado eq false}">
 											<td>Pedente.</td>
 										</c:when>
 									</c:choose>

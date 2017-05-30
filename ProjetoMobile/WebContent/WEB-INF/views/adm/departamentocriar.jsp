@@ -28,7 +28,7 @@
 	<div id="main" class="container">
 		<div class="col-md-3 title">
 			<h2 style="background: #d60606;">
-				<i class="fa fa-commenting-o" aria-hidden="true"></i>Sugestões
+				<i class="fa fa-commenting-o" aria-hidden="true"></i>Departamento
 			</h2>
 		</div>
 		<h3 class="col-md-12"></h3>

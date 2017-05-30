@@ -23,7 +23,7 @@
 							<li><a href="novo_departamento">Criar novo departamentos</a></li>
 							<!--                 			<li><a href="">Chamados em Aberto</a></li> -->
 						</ul></li>
-
+						<li><a class="navbar-brand" href="listar_fila">Listar Fila</a></li>
 					<li style="float: right;"><a class="navbar-brand"
 						href="logout">Logout</a></li>
 				</ul>

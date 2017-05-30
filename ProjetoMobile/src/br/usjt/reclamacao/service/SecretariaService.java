@@ -12,6 +12,8 @@ import br.usjt.reclamacao.model.Usuario;
 @Service
 public class SecretariaService {
 	SecretariaDAO dao;
+
+	
 	@Autowired
 	public SecretariaService(SecretariaDAO dao) {
 		this.dao = dao;
@@ -23,6 +25,10 @@ public class SecretariaService {
 	
 	public void criar(Secretaria secretaria) throws IOException{
 		dao.criar(secretaria);
+	}
+	
+	public List<Secretaria>listarSecretariaFila() throws IOException{
+		return dao.listarFila();
 	}
 	
 	public List<Secretaria>listarSecretaria() throws IOException{

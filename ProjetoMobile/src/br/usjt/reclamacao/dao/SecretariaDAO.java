@@ -8,6 +8,7 @@ import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
 
+import br.usjt.reclamacao.model.Reclamacao;
 import br.usjt.reclamacao.model.Secretaria;
 import br.usjt.reclamacao.model.Usuario;
 
@@ -37,6 +38,11 @@ public class SecretariaDAO {
 		return manager.createQuery("select s from Secretaria s").getResultList();
 	}
 
+	
+	@SuppressWarnings("unchecked")
+	public List<Secretaria> listarFila(){
+		return manager.createQuery("SELECT s FROM Secretaria r order by s.sla").getResultList();
+	}
 
 	@SuppressWarnings("unchecked")
 	public List<Secretaria> listarCadastro() {

@@ -115,7 +115,7 @@
 									<td>${reclamacao.titulo}</td>
 									<td>${reclamacao.descricao}</td>
 									<td>${reclamacao.dataHora}</td>
-									<td>${reclamacao.cidadao.cargo}</td>
+									<td>${reclamacao.cidadao.idcargo.departamento}</td>
 									<td>${reclamacao.resposta}</td>
 									<td>${reclamacao.avaliador.email}</td>
 
@@ -127,13 +127,8 @@
 											<td>Pedente.</td>
 										</c:when>
 									</c:choose>
-
-									<c:forEach var="secretaria" items="${secretaria}">
-										<c:if test="${reclamacao.cidadao.cargo eq secretaria.departamento}">
-											<td>${secretaria.sla}</td>
-										</c:if>
-									</c:forEach>
-
+											<td>${reclamacao.cidadao.idcargo.sla}</td>
+				
 									<td class="actions"><a class="btn btn-success btn-xs"
 										href="mostrar_reclamacaoadm?id=${reclamacao.id}">Exibir</a> <a
 										class="btn btn-warning btn-xs"

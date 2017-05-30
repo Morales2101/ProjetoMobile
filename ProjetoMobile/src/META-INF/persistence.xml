@@ -7,11 +7,12 @@
 		<!-- provedor/implementacao do JPA -->
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<!-- entidade mapeada -->
-		<class>br.usjt.reclamacao.model.Secretaria</class>
 		<class>br.usjt.reclamacao.model.Reclamacao</class>
 		<class>br.usjt.reclamacao.model.Usuario</class>
+		<class>br.usjt.reclamacao.model.Secretaria</class>
 		<properties>
-			<!-- dados da conexao foram migrados para o spring-context.xml na configuracao do datasource-->
+			<!-- dados da conexao foram migrados para o spring-context.xml na configuracao 
+				do datasource -->
 			<!-- propriedades do hibernate -->
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
 			<property name="hibernate.show_sql" value="false" />

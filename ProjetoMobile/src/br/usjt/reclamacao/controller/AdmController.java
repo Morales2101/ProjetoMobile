@@ -171,5 +171,21 @@ public class AdmController {
 		}
 		return "erro";
 	}
+	
+	@RequestMapping("listar_fila")
+	public String listagemfila(Model model, String chave) {
+		try {
+			if (chave == null || chave.equals("id")) {
+				model.addAttribute("reclamacao", rs.listarReclamacoes());
+			} else {
+				model.addAttribute("reclamacao", rs.listarReclamacoes());
+			}
+			return "adm/reclamacaolistarfila";
+		} catch (Exception e) {
+			e.printStackTrace();
+			model.addAttribute("erro", e);
+		}
+		return "erro";
+	}
 
 }

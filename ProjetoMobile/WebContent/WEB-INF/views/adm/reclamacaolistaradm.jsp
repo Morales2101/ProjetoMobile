@@ -111,14 +111,14 @@
 									<td>${reclamacao.titulo}</td>
 									<td>${reclamacao.descricao}</td>
 									<td>${reclamacao.dataHora}</td>
-									<td>${reclamacao.cidadao.cargo}</td>
+									<td>${reclamacao.cidadao.idcargo.departamento}</td>
 									<td>${reclamacao.resposta}</td>
 									<td>${reclamacao.avaliador.email}</td>
 									<c:choose>
 										<c:when test="${reclamacao.aprovado eq true}">
 											<td>Resolvido.</td>
 										</c:when>
-										<c:when test="${reclamacao.cidadao.cargo eq false}">
+										<c:when test="${reclamacao.aprovado eq false}">
 											<td>Pedente.</td>
 										</c:when>
 									</c:choose>
