@@ -19,7 +19,7 @@
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
 		<property name="url" value="jdbc:mysql://localhost/sisreclama?createDatabaseIfNotExist=true&amp;useUnicode=yes&amp;characterEncoding=UTF-8"></property>
 		<property name="username" value="root"></property>
-		<property name="password" value="projsuave"></property>
+		<property name="password" value="autocad3"></property>
 	</bean>
 	<!-- gerenciamento de jpa pelo spring -->
 	<bean id="entityManagerFactory"
