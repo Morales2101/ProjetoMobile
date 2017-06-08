@@ -16,31 +16,44 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.usjt.reclamacao.model.Reclamacao;
+import br.usjt.reclamacao.model.Usuario;
 import br.usjt.reclamacao.service.ReclamacaoService;
+import br.usjt.reclamacao.service.UsuarioService;
 
 @RestController
 public class MapeamentoRest {
 
 	private ReclamacaoService rs;
+	private UsuarioService us;
 
 	@Autowired
-	public MapeamentoRest(ReclamacaoService rs) {
+	public MapeamentoRest(ReclamacaoService rs, UsuarioService us) {
 		this.rs = rs;
+		this.us = us;
 	}
 
 	@RequestMapping(method = RequestMethod.GET, value = "rest/locais")
-	public @ResponseBody List<Reclamacao> listagem(String chave) {
-		List<Reclamacao> lista = null;
+	public @ResponseBody List<Reclamacao> listagem() {
+		
 		try {
-			if (chave == null || chave.equals("")) {
-				lista = rs.listarReclamacoes();
-			} else {
-				lista = rs.listarReclamacoes(chave);
-			}
+				return rs.listarReclamacoes();
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		return lista;
+		return null;
+	}
+	
+	@RequestMapping(method = RequestMethod.GET, value = "rest/locais/usuario")
+	public @ResponseBody List<Usuario> listagem2() {
+		
+		try {
+				return us.listarCadastro();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 	@RequestMapping(method = RequestMethod.GET, value = "rest/locais/{id}")
